@@ -1,0 +1,34 @@
+.header {
+    width: 100%;
+    height: 96px;
+    background-color: white;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+        width: 167px;
+        height: 56px;
+        margin-left: 32px;
+    }
+
+    .authorize {
+        width: 227px;
+        height: 56px;
+        margin-right: 32px;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+
+        .search {
+            width: 57px;
+            align-self: center;
+        }
+
+        .user {
+            width: 170px;
+            align-self: center;
+        }
+    }
+}

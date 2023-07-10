@@ -1,0 +1,27 @@
+.notFoundPage {
+    width: 100vw;
+    height: auto;
+    position: relative;
+
+    .img {
+        width: 100%;
+    }
+
+    .text {
+        width: 800px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        border-radius: 20px;
+        font-size: 56px;
+        color: #0d0e40;
+        top: 200px;
+        left: 20%;
+        background-color: #f1a8e5;
+    }
+}
