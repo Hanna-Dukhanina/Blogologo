@@ -1,6 +1,6 @@
 .entranceMain {
     width: 100%;
-    height: 1839px;
+    height: auto;
     background: #44159d36;
 
     .main {
@@ -8,11 +8,12 @@
         display: flex;
         flex-wrap: wrap;
         margin: auto;
+        justify-content: space-between;
     }
 
     .shellPager {
         width: 1120px;
-        height: 167px;
+        height: 94px;
         display: flex;
         margin: 0 auto;
         align-items: center;

@@ -1,0 +1,47 @@
+.menu-button,
+.menu-button-open {
+    width: 170px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid blue;
+    background: blue;
+    color: white;
+}
+
+.dropdown-menu {
+    width: 170px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    background: #FFFFFF;
+    justify-content: space-between;
+    position: absolute;
+
+    .menu {
+        width: 170px;
+
+        .shellSignIn,
+        .isAuth {
+            height: 56px;
+            background: #E8E8E8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .logOut,
+            .signIn {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+                color: #313037;
+                border: none;
+            }
+        }
+    }
+}

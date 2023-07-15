@@ -1,14 +1,18 @@
+import React, { useContext } from "react"
+import { ToggleContext } from "../../context/toggleContext"
 import Header from "./Header"
-import Main from "./Posts"
+import Posts from "./Posts"
+import style from './style.module.scss'
 
+const EntrancePage = () => {
+    const { isActiveValue } = useContext(ToggleContext)
 
-const EntranceMain = () => {
     return (
-        <div>
+        <div className={`${style.entrancePage} ${isActiveValue ? style['dark_mode'] : ''}`}>
             <Header />
-            <Main />
+            <Posts />
         </div>
     )
 }
 
-export default EntranceMain
+export default EntrancePage

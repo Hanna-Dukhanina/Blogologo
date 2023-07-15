@@ -1,0 +1,19 @@
+.post {
+    width: 470px;
+    height: 519px;
+    border: 1px solid rebeccapurple;
+    padding: 4px;
+    margin: 0 auto;
+
+    h3 {
+        width: 100%;
+        height: 60px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+}

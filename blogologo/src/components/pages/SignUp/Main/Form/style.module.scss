@@ -1,0 +1,52 @@
+.form {
+    width: 544px;
+    height: 560px;
+}
+
+.wrapper {
+    height: 84px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+
+    &>* {
+        margin-top: .25em;
+    }
+
+    .error {
+        color: red;
+    }
+
+    input.error {
+        border-color: red;
+    }
+
+    .label {
+        width: 145px;
+        height: 20px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        color: #313037;
+        margin-bottom: 8px;
+    }
+
+    .name,
+    .email,
+    .password,
+    .confirmPassword {
+        height: 56px;
+        background: #FFFFFF;
+        border-radius: 2px;
+        border: 0.5px solid blue;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        padding-left: 20px;
+        color: #8D8E97;
+    }
+}

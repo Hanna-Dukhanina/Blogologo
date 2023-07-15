@@ -6,6 +6,11 @@
     justify-content: center;
     background-color: #006d8b;
 
+    &.dark_mode {
+        background-color: #080538;
+        transition: 0.5s;
+    }
+
     .contentFooter {
         width: 1122px;
         height: 24px;
@@ -32,8 +37,12 @@
             }
 
             .button {
-                width: 52px;
+                width: 55px;
             }
         }
     }
+}
+
+.isActive {
+    transform: translateX(140%);
 }

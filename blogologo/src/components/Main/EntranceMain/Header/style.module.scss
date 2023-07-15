@@ -1,15 +1,17 @@
 .entranceHeader {
     width: 100%;
-    height: 445px;
     padding-top: 100px;
+
+    &.dark_mode {
+        color: antiquewhite;
+    }
 
     .header {
         width: 1120px;
-        height: 100%;
         margin: 0 auto;
 
         .upIndent {
-            height: 84px;
+            height: 30px;
         }
 
         .articlesNews {
@@ -26,6 +28,10 @@
                 font-style: normal;
                 font-weight: 700;
                 line-height: 80px;
+
+                &.dark_mode {
+                    color: antiquewhite;
+                }
             }
 
             .artN {
@@ -37,31 +43,45 @@
                 font-style: normal;
                 font-weight: 600;
                 line-height: 24px;
+                align-items: end;
+                border-bottom: 1px solid blue;
 
                 .articles {
-                    width: 61px;
+                    width: 90px;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
 
                 .news {
-                    width: 61px;
+                    width: 90px;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
             }
         }
 
         .downIndent {
-            height: 185px;
+            width: 1120px;
+            height: 70px;
             display: flex;
-            justify-content: center;
+            justify-content: start;
+            align-items: center;
+            margin-top: 64px;
 
             .timeInterval {
-                height: 57px;
+                height: 100%;
+                width: auto;
                 display: flex;
 
                 .day,
                 .week,
                 .month,
                 .year {
-                    width: 43px;
+                    width: 110px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -74,6 +94,7 @@
                     font-style: normal;
                     font-weight: 500;
                     line-height: 24px;
+                    margin: 10px;
                 }
             }
         }

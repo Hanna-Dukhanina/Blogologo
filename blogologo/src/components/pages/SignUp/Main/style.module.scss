@@ -1,0 +1,38 @@
+.shell {
+    width: 589px;
+    height: 684px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 70px auto;
+    border: 1px solid #2231aa;
+
+
+    .templateBody {
+        width: 544px;
+        height: 604px;
+
+        .highPart {
+            height: 560px;
+        }
+
+        .lowPart {
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items: center;
+
+            .signIn {
+                width: 243px;
+                height: 20px;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+                color: #8D8E97;
+            }
+        }
+    }
+}

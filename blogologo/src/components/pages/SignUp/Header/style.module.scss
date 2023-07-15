@@ -1,0 +1,43 @@
+.shellHeader {
+    height: 245px;
+
+    .header {
+        width: 200px;
+        height: 100%;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        color: #313037;
+
+        .homeBtn {
+            width: 173px;
+            height: 42px;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            border: none;
+            background: #E5E5E5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            a {
+                text-decoration: none;
+                color: #313037;
+            }
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 56px;
+            line-height: 80px;
+        }
+    }
+}

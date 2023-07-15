@@ -1,3 +1,4 @@
+import React from "react"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { getPages } from "./getPages"
@@ -27,7 +28,14 @@ export const Pager = ({ total, itemPerPage, currentPage, setCurrentPage }: Pager
                         ? (
                             <span key={item}>{item}</span>
                         ) : (
-                            <Link key={item} to={`/entrancePage/${item}`} onClick={() => setCurrentPage(Number(item))}>{item}</Link>
+                            <Link
+                                key={item}
+                                to={`/entrancePage/${item}`}
+                                className={currentPage === Number(item) ? style['current-page'] : ''}
+                                onClick={() => setCurrentPage(Number(item))}
+                            >
+                                {item}
+                            </Link>
                         )
                 ))
             }

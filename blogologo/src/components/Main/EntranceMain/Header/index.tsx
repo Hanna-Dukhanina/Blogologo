@@ -1,12 +1,16 @@
+import React, { useContext } from 'react'
+import { ToggleContext } from '../../../context/toggleContext'
 import style from './style.module.scss'
 
 const Header = () => {
+    const { isActiveValue } = useContext(ToggleContext)
+
     return (
-        <div className={style['entranceHeader']}>
+        <div className={`${style.entranceHeader} ${isActiveValue ? style['dark_mode'] : ''}`}>
             <div className={style['header']}>
                 <div className={style['upIndent']}></div>
                 <div className={style['articlesNews']}>
-                    <div className={style['blog']}>Blog</div>
+                    <div className={`${style.blog} ${isActiveValue ? style['dark_mode'] : ''}`}>Blog</div>
                     <div className={style['artN']}>
                         <div className={style['articles']}>Articles</div>
                         <div className={style['news']}>News</div>

@@ -1,17 +1,18 @@
 import axios from "axios"
+import React from "react"
 import { useEffect, useState } from "react"
 import { Pager } from "../../../Pager"
 import { EntranceContent } from "../../../pages/BlogPage/entrancePage"
 import { PinProps } from "../../../pages/BlogPage/type"
 import style from './style.module.scss'
 
-const Main = () => {
+const Posts = () => {
     const [entrancePin, setEntrancePin] = useState<PinProps[]>([])
     const [currentPage, setCurrentPage] = useState(1)
     const postsPerPage = 12
 
     async function fetchPins() {
-        const response = await axios.get<{ items: PinProps[] }>('https://mockside.vercel.app/api/posts');
+        const response = await axios.get<{ items: PinProps[] }>('https://mockside.vercel.app/api/posts')
         setEntrancePin(response.data.items)
     }
 
@@ -41,4 +42,4 @@ const Main = () => {
         </div>
     )
 }
-export default Main       
+export default Posts       

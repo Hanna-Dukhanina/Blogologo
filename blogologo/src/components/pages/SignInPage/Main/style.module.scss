@@ -1,0 +1,38 @@
+.shell {
+    width: 589px;
+    display: flex;
+    justify-content: center;
+    margin: 70px auto 70px auto;
+    border: 1px solid #2231aa;
+
+    .templateBody {
+        height: 474px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .highPart {
+            height: 348px;
+        }
+
+        .lowPart {
+            height: 44px;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items: center;
+
+            .signUp {
+                width: 243px;
+                height: 20px;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+                color: #8D8E97;
+            }
+        }
+    }
+}
