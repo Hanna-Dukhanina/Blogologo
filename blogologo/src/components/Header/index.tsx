@@ -16,9 +16,9 @@ export const Header = () => {
                     <div className={style.text}>BLOGOLOGO</div>
                 </div>
                 <div className={style['authorize']}>
-                    <div className={style['search']}>
+                    <div className={`${style.search} ${isActiveValue ? style['dark_mode'] : ''}`}>
                         <img
-                            className={`${style.img} ${isActiveValue ? style['dark_mode'] : ''}`}
+                            className={style.imgLupa}
                             src={lupa}
                             alt=''
                         />

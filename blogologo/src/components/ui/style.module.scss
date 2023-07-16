@@ -7,11 +7,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: black;
+    background: antiquewhite;
 }
 
 .toggleBtn {
-    background: rgb(253, 253, 5);
+    background: darkblue;
     width: 20px;
     height: 20px;
     position: absolute;
@@ -20,4 +20,8 @@
     left: 3px;
     transition: 0.5s;
     cursor: pointer;
+
+    &.dark_mode {
+        background-color: yellow;
+    }
 }

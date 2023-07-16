@@ -14,7 +14,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <div className="app-wrapper"> {/* Добавьте класс стиля или стили к корневому элементу */}
+        <div className="app-wrapper">
           <Routes>
             <Route path='/' element={<Layout />}>
               <Route index element={<EntrancePage />} />

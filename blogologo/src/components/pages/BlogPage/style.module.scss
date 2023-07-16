@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: space-between;
     border-radius: 16px;
-    background-color: white;
+    background-color: black;
     border: 1px solid;
     margin-top: 10px;
 
@@ -30,6 +30,14 @@
         flex-direction: column;
         justify-content: space-between;
         padding: 32px;
+        background-color: white;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+
+        &.dark_mode {
+            color: antiquewhite;
+            background-color: #b687bd;
+        }
 
         .createdAt {
             height: 24px;

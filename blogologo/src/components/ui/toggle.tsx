@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ToggleContext } from '../context/toggleContext';
 import style from './style.module.scss'
 
 interface Itoggle {
@@ -8,10 +9,15 @@ interface Itoggle {
 
 export const Toggle = (props: Itoggle) => {
     const toggleClassName = props.className ? props.className : '';
+
+    const { isActiveValue } = useContext(ToggleContext)
+
+    const togglebtn = `${style.toggleBtn} ${isActiveValue ? style['dark_mode'] : ''}`
+
     return (
         <div className={style.toggle}>
             <input
-                className={`${style.toggleBtn} ${toggleClassName}`}
+                className={`${togglebtn} ${toggleClassName}`}
                 type='button'
                 onClick={props.onClick}
             />

@@ -2,10 +2,6 @@
     width: 100%;
     padding-top: 100px;
 
-    &.dark_mode {
-        color: antiquewhite;
-    }
-
     .header {
         width: 1120px;
         margin: 0 auto;
@@ -52,6 +48,10 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
+
+                    &.dark_mode {
+                        color: antiquewhite;
+                    }
                 }
 
                 .news {
@@ -60,6 +60,10 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
+
+                    &.dark_mode {
+                        color: antiquewhite;
+                    }
                 }
             }
         }
@@ -95,6 +99,11 @@
                     font-weight: 500;
                     line-height: 24px;
                     margin: 10px;
+
+                    &.dark_mode {
+                        color: antiquewhite;
+                        background-color: #585860;
+                    }
                 }
             }
         }

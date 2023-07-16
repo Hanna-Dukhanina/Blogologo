@@ -59,11 +59,8 @@
                 align-items: center;
                 border: 1px solid blue;
 
-                .img {
-
-                    &.dark_mode {
-                        color: antiquewhite;
-                    }
+                &.dark_mode {
+                    background-color: #828e8f;
                 }
             }
         }
