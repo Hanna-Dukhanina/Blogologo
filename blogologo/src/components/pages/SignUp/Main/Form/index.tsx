@@ -9,7 +9,7 @@ type Props = {
     errorMessage?: string
     inputClassName?: string
     name?: string
-    onChange?: string | undefined
+    onChange?: any
 }
 
 const InputForm = (props: Props) => {

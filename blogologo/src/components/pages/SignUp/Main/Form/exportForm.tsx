@@ -1,21 +1,46 @@
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import InputForm from '.'
 import Submit from '../../ButtonSignUp'
 import style from './style.module.scss'
 
-
-export const ExportForm = () => {
-    const handleSubmit = (event: React.FormEvent) => {
-        event.preventDefault()
+const faceApi = {
+    login: async (login: string, password: string) => {
+        return login == 'admin' && password == 'admin'
     }
+}
+type FormType = {
+    login: string
+    password: string
+}
+export const ExportForm = () => {
+    // const handleSubmit = (event: React.FormEvent) => {
+    //     event.preventDefault()
+    // }
+    const [form, setForm] = useState({} as FormType)
+    const handleOnClick = useCallback(
+        () => {
+            faceApi.login(form.login, form.password)
+                .then(result => alert(result ? 'Вы вошли' : 'Ошибка'))
+        }, [],
+    )
+
+    const handleOnChange = useCallback(
+        (e: React.FormEvent<HTMLInputElement>) => {
+            setForm({
+                ...form,
+                [e.currentTarget.id]: e.currentTarget.value
+            })
+        }, [])
+
     return (
-        <form className={style.form} onSubmit={handleSubmit}>
+        <form className={style.form}>
             <InputForm
                 inputClassName={style.name}
                 title={'Name'}
                 placeholder={'Your name'}
                 isError={false}
                 errorMessage={'Cannot be empty'}
+                onChange={handleOnChange}
             />
             <InputForm
                 inputClassName={style.email}
@@ -23,6 +48,7 @@ export const ExportForm = () => {
                 placeholder={'Your email'}
                 isError={false}
                 errorMessage={'Cannot be empty'}
+                onChange={handleOnChange}
             />
             <InputForm
                 inputClassName={style.password}
@@ -30,6 +56,7 @@ export const ExportForm = () => {
                 placeholder={'Your password'}
                 isError={false}
                 errorMessage={'Cannot be empty'}
+                onChange={handleOnChange}
             />
             <InputForm
                 inputClassName={style.confirmPassword}
@@ -37,6 +64,7 @@ export const ExportForm = () => {
                 placeholder={'Confirm password'}
                 isError={false}
                 errorMessage={'Cannot be empty'}
+                onChange={handleOnChange}
             />
             <Submit text={'Sign Up'} />
         </form>

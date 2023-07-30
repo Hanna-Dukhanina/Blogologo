@@ -1,5 +1,5 @@
 import React from 'react'
-import SignInButton from '../ButtonSignIn'
+import { SignIn } from '../../SignInPage'
 import { ExportForm } from './Form/exportForm'
 import style from './style.module.scss'
 
@@ -13,7 +13,7 @@ const TemplateBody = () => {
                 <div className={style['lowPart']}>
                     <div className={style['signIn']}>
                         Already have an account?
-                        <SignInButton />
+                        <a href='/pageSignIn' className={style['signIn']} onClick={SignIn}>Sign in</a>
                     </div>
                 </div>
             </div>

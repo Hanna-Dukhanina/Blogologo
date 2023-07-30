@@ -1,7 +1,7 @@
 import { PinProps } from './type'
 import style from './style.module.scss'
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { ToggleContext } from '../../context/toggleContext'
 
 type EntranceProps = {
@@ -11,6 +11,9 @@ type EntranceProps = {
 export const EntranceContent = ({ pin }: EntranceProps) => {
     const { isActiveValue } = useContext(ToggleContext)
 
+    // const { pageId } = useParams()
+    // const isListPost = !pageId
+
     return (
         <div className={style['pin']}>
             <div className={style['divImage']}>
@@ -19,7 +22,14 @@ export const EntranceContent = ({ pin }: EntranceProps) => {
             <div className={`${style.divContent} ${isActiveValue ? style['dark_mode'] : ''}`}>
                 <div className={style['createdAt']}>{pin.createdAt}</div>
                 <div className={style['title']}>
-                    <Link to={`/entrancePage/${pin.id}`}>{pin.title}</Link>
+                    {/* {isListPost ? (
+                        <Link to={`/entrancePage/${pin.id}`}>{pin.title}</Link>
+                    ) : (
+                        <Link to={`/post/${pin.id}`}>
+                            {pin.title}
+                        </Link>
+                    )} */}
+                    <Link to={`/post/${pin.id}`}>{pin.title}</Link>
                 </div>
             </div>
         </div>

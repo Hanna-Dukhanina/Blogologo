@@ -8,9 +8,7 @@ const AuthButtons = () => {
     return (
         <div className={style['isAuth']}>
             {
-                isAuthorized
-                    ? <a className={style['logOut']} onClick={logout}>Log out</a>
-                    : <a href='/pageSignIn' className={style['signIn']} onClick={signin}>Sign in</a>
+                <a href='/pageSignIn' className={style['signIn']} onClick={signin}>Sign in</a>
             }
         </div >
     )

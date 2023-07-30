@@ -1,37 +1,37 @@
-import { createContext, ReactNode, useState, useContext } from "react"
+import React from 'react'
+import style from './style.module.scss'
 
-type AuthContextType = {
-    isAuthorized: boolean
-    signin: () => void
-    logout: () => void
+type Props = {
+    title?: string
+    value?: string
+    placeholder?: string
+    isError?: boolean
+    errorMessage?: string
+    inputClassName?: string
+    onChange?: any
 }
 
-const AuthContext = createContext<AuthContextType>({} as AuthContextType)
-
-type AuthProviderProps = {
-    children: ReactNode
-}
-
-export const AuthProvider = ({ children }: AuthProviderProps) => {
-
-    const [auth, setAuth] = useState(false)
-
-    const signin = () => setAuth(true)
-    const logout = () => setAuth(false)
-
-    const providerValue: AuthContextType = {
-        isAuthorized: auth,
-        signin: signin,
-        logout: logout
-    }
-
+const InputForm = (props: Props) => {
+    const { title, value, placeholder, isError, errorMessage, inputClassName, onChange } = props
     return (
-        <AuthContext.Provider value={providerValue}>
-            {children}
-        </AuthContext.Provider>
+        <div className={style.wrapper}>
+            <label className={style.label}>{title}</label>
+            <input
+                className={`${inputClassName ? inputClassName + ' ' : ''}${isError ? style.error : ''}`}
+                type='text'
+                placeholder={placeholder}
+                value={value}
+                onChange={onChange}
+            />
+            {
+                isError && (
+                    <div className={style.error}>
+                        {errorMessage}
+                    </div>
+                )
+            }
+        </div>
     )
 }
 
-export const useAuthContext = () => {
-    return useContext(AuthContext)
-}
+export default InputForm

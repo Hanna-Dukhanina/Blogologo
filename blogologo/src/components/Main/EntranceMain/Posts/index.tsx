@@ -1,6 +1,7 @@
-import axios from "axios"
 import React from "react"
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import { getPosts } from "../../../../services/postService"
 import { Pager } from "../../../Pager"
 import { EntranceContent } from "../../../pages/BlogPage/entrancePage"
 import { PinProps } from "../../../pages/BlogPage/type"
@@ -12,8 +13,12 @@ const Posts = () => {
     const postsPerPage = 12
 
     async function fetchPins() {
-        const response = await axios.get<{ items: PinProps[] }>('https://mockside.vercel.app/api/posts')
-        setEntrancePin(response.data.items)
+        try {
+            const response = await getPosts()
+            setEntrancePin(response)
+        } catch (error) {
+            console.error('Ошибка при получении пинов:', error)
+        }
     }
 
     useEffect(() => {
@@ -28,7 +33,9 @@ const Posts = () => {
         <div className={style['entranceMain']}>
             <div className={style['main']}>
                 {currentPosts.map((pin) => (
-                    <EntranceContent pin={pin} key={pin.id} />
+                    <Link to={`/entrancePage/${pin.id}`} key={pin.id}>
+                        {<EntranceContent pin={pin} />}
+                    </Link>
                 ))}
             </div>
             <div className={style['shellPager']}>
