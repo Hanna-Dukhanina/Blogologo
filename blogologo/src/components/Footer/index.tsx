@@ -1,10 +1,11 @@
-import React, { useContext } from 'react'
-import { ToggleContext } from '../context/toggleContext'
+import React from 'react'
+import { useSelector } from 'react-redux'
+import { StateType } from '../../store/ChangeTheme/types'
 import { Toggle } from '../ui/toggle'
 import style from './style.module.scss'
 
 const Footer = () => {
-    const { isActiveValue, isActiveFunction } = useContext(ToggleContext)
+    const isActiveValue = useSelector((state: StateType) => state.theme)
 
     return (
         <div className={`${style.footer} ${isActiveValue ? style['dark_mode'] : ''}`}>
@@ -15,7 +16,7 @@ const Footer = () => {
                         Dark theme
                     </div>
                     <div className={style['button']}>
-                        <Toggle onClick={isActiveFunction} className={isActiveValue ? style['isActive'] : ''} />
+                        <Toggle />
                     </div>
                 </div>
             </div>

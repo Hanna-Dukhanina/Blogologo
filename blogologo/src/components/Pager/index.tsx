@@ -1,7 +1,8 @@
-import React, { useContext } from "react"
+import React from "react"
 import { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
-import { ToggleContext } from "../context/toggleContext"
+import { StateType } from "../../store/ChangeTheme/types"
 import { getPages } from "./getPages"
 import style from './style.module.scss'
 
@@ -21,7 +22,7 @@ export const Pager = ({ total, itemPerPage, currentPage, setCurrentPage }: Pager
         setPages(getPages(total, itemPerPage, currentPage))
     }, [total, itemPerPage, currentPage])
 
-    const { isActiveValue } = useContext(ToggleContext)
+    const isActiveValue = useSelector((state: StateType) => state.theme)
     const clickPage = `${style['current-page']} ${isActiveValue ? style['dark_mode'] : ''}`
 
     return (

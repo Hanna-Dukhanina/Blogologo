@@ -2,15 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import ToggleContextProvider from './components/context/toggleContext';
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 )
 root.render(
   <React.StrictMode>
-    <ToggleContextProvider>
+    <Provider store={store}>
       <App />
-    </ToggleContextProvider>
+    </Provider>
   </React.StrictMode>
 )

@@ -1,11 +1,12 @@
-import React, { useContext } from "react"
-import { ToggleContext } from "../../context/toggleContext"
+import React from "react"
+import { useSelector } from "react-redux"
+import { StateType } from "../../../store/ChangeTheme/types"
 import Header from "./Header"
 import Posts from "./Posts"
 import style from './style.module.scss'
 
 const EntrancePage = () => {
-    const { isActiveValue } = useContext(ToggleContext)
+    const isActiveValue = useSelector((state: StateType) => state.theme)
 
     return (
         <div className={`${style.entrancePage} ${isActiveValue ? style['dark_mode'] : ''}`}>

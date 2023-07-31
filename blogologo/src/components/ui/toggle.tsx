@@ -1,25 +1,30 @@
-import React, { useContext } from 'react'
-import { ToggleContext } from '../context/toggleContext';
+import { Console } from 'console';
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { StateType } from '../../store/ChangeTheme/types';
 import style from './style.module.scss'
 
-interface Itoggle {
-    className?: string;
-    onClick: () => void
-}
+export const Toggle = () => {
 
-export const Toggle = (props: Itoggle) => {
-    const toggleClassName = props.className ? props.className : '';
+    const theme = useSelector((state: StateType) => state.theme)
+    // console.log(theme)
+    const dispatch = useDispatch()
 
-    const { isActiveValue } = useContext(ToggleContext)
+    const togglebtn = `${style.toggleBtn} ${theme === 'dark' ? style['dark_mode'] : ''} ${theme === 'dark' ? style['right_position'] : ''}`
 
-    const togglebtn = `${style.toggleBtn} ${isActiveValue ? style['dark_mode'] : ''}`
+    const onClick = () => {
+        console.log('Button clicked!')
+        dispatch({
+            type: theme === 'light' ? 'SET_LIGHT_THEME' : 'SET_DARK_THEME'
+        })
+    }
 
     return (
-        <div className={style.toggle}>
+        <div className={style['toggle']}>
             <input
-                className={`${togglebtn} ${toggleClassName}`}
+                className={`${togglebtn} `}
                 type='button'
-                onClick={props.onClick}
+                onClick={onClick}
             />
         </div>
     )

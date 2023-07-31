@@ -11,7 +11,7 @@
 }
 
 .toggleBtn {
-    background: darkblue;
+    background: rgb(16, 16, 62);
     width: 20px;
     height: 20px;
     position: absolute;
@@ -20,8 +20,12 @@
     left: 3px;
     transition: 0.5s;
     cursor: pointer;
+}
 
-    &.dark_mode {
-        background-color: yellow;
-    }
+.dark_mode {
+    background-color: yellow;
+}
+
+.right_position {
+    left: calc(100% - 23px);
 }

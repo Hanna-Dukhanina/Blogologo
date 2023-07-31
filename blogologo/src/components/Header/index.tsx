@@ -1,12 +1,13 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import style from './style.module.scss'
 import logo from '../Header/img/Logo.svg'
 import lupa from '../Header/img/Lupa.svg'
 import UserBtn from './ButtonUser'
-import { ToggleContext } from '../context/toggleContext'
+import { useSelector } from 'react-redux'
+import { StateType } from '../../store/ChangeTheme/types'
 
 export const Header = () => {
-    const { isActiveValue } = useContext(ToggleContext)
+    const isActiveValue = useSelector((state: StateType) => state.theme)
 
     return (
         <div className={`${style.shellHeader} ${isActiveValue ? style['dark_mode'] : ''}`}>

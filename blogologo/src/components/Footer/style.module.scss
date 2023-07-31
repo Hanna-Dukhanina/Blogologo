@@ -41,8 +41,8 @@
             }
         }
     }
-}
 
-.isActive {
-    transform: translateX(140%);
+    &.isActive {
+        transform: translateX(140%);
+    }
 }
