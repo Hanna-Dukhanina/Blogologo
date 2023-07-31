@@ -3,7 +3,6 @@ import { ActionType, StateType } from "./types";
 const initialValue: StateType = {
     theme: 'light'
 }
-console.log(initialValue)
 export const reducer = (state: StateType = initialValue, action: ActionType) => {
     switch (action.type) {
         case 'SET_LIGHT_THEME':

@@ -10,14 +10,14 @@ type EntranceProps = {
 }
 
 export const EntranceContent = ({ pin }: EntranceProps) => {
-    const isActiveValue = useSelector((state: StateType) => state.theme)
+    const isActiveValue = useSelector((state: StateType) => (state.theme as unknown as StateType).theme)
 
     return (
         <div className={style['pin']}>
             <div className={style['divImage']}>
                 <img className={style['image']} src={pin.image} alt=''></img>
             </div>
-            <div className={`${style.divContent} ${isActiveValue ? style['dark_mode'] : ''}`}>
+            <div className={`${style.divContent} ${isActiveValue === 'dark' ? style['dark_mode'] : ''}`}>
                 <div className={style['createdAt']}>{pin.createdAt}</div>
                 <div className={style['title']}>
                     <Link to={`/post/${pin.id}`}>{pin.title}</Link>

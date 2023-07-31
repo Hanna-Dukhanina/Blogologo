@@ -22,8 +22,8 @@ export const Pager = ({ total, itemPerPage, currentPage, setCurrentPage }: Pager
         setPages(getPages(total, itemPerPage, currentPage))
     }, [total, itemPerPage, currentPage])
 
-    const isActiveValue = useSelector((state: StateType) => state.theme)
-    const clickPage = `${style['current-page']} ${isActiveValue ? style['dark_mode'] : ''}`
+    const isActiveValue = useSelector((state: StateType) => (state.theme as unknown as StateType).theme)
+    const clickPage = `${style['current-page']} ${isActiveValue === 'dark' ? style['dark_mode'] : ''}`
 
     return (
         <div className={style['pager']}>

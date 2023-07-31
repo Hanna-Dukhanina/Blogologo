@@ -1,9 +1,3 @@
-// export type PostType = {
-//     id: string
-//     title: string
-//     image: string
-// }
-
 import { PinProps } from "../components/pages/BlogPage/type";
 
 type MocksideResponseType = {

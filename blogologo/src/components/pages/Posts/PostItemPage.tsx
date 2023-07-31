@@ -24,17 +24,16 @@ const PostItemPage = () => {
         navigate(-1)
     }
 
-    const isActiveValue = useSelector((state: StateType) => state.theme)
+    const isActiveValue = useSelector((state: StateType) => (state.theme as unknown as StateType).theme)
 
     return (
-        <div className={`${style['shellpost']}  ${isActiveValue ? style['dark_mode'] : ''}`}>
-            <div className={`${style['post']}  ${isActiveValue ? style['dark_mode'] : ''}`}>
+        <div className={`${style['shellpost']}  ${isActiveValue === 'dark' ? style['dark_mode'] : ''}`}>
+            <div className={`${style['post']}  ${isActiveValue === 'dark' ? style['dark_mode'] : ''}`}>
                 <div className={style['backBtn']}>
                     <div className={style['btn']}>
                         <p onClick={clickBack}>Haзад</p>
                     </div>
                 </div>
-                Post Item Page with ID: {postId}
                 <div className={style['pin']}>
                     <p className={style['title']}>{post.title}</p>
                     <div className={style['img']}>
